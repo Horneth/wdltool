@@ -8,9 +8,11 @@ organization := "org.broadinstitute"
 
 scalaVersion := "2.11.8"
 
+val wdl4sV = "0.10"
+
 lazy val versionSettings = Seq(
   // Upcoming release, or current if we're on the master branch
-  git.baseVersion := "0.9",
+  git.baseVersion := "0.11",
 
   // Shorten the git commit hash
   git.gitHeadCommit := git.gitHeadCommit.value map { _.take(7) },
@@ -34,7 +36,7 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.broadinstitute" %% "wdl4s" % "0.10",
+  "org.broadinstitute" %% "wdl4s" % wdl4sV,
   //---------- Test libraries -------------------//
   "org.scalatest" %% "scalatest" % "2.2.5" % Test
 )
